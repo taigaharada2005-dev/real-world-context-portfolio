@@ -1,0 +1,4 @@
+# Only explicitly approved portfolio documents are tracked.
+*
+!.gitignore
+!README.md
