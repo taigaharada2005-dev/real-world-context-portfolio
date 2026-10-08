@@ -1,25 +1,48 @@
 # Real-world Context
+## AI現場調査・改善コンサルティングシステム
 
-**AIが現場を観察し、ヒアリングを通じて背景や制約を理解し、改善策を提案するシステムを開発しています。**
+**産業現場の改善・自動化において、人間による現場調査・分析・コンサルティングがボトルネックとなっている問題を、AIによって解消することを目指しています。**
 
-本ポートフォリオでは、現場の情報を集める記録デバイス **Real-world-context** と、その情報を分析するAI基盤 **Real-world-context-os** を紹介します。電子回路・筐体設計から動画解析、AIモデルの連携、検証までを扱う開発プロジェクトです。
+本ポートフォリオでは、現場の情報を集める記録デバイス **Real-world-context** と、観察・分析・ヒアリング・改善提案を支えるAI基盤 **Real-world-context-os** の開発概要を紹介します。
 
-## 解決したい課題
+## 1. プロジェクトの目的
 
-現場の業務を改善するには、作業の様子に加えて、その作業が必要な理由や、担当者が判断するときの条件を理解する必要があります。映像から動きや手順を観察できても、品質の基準、例外への対応、設備や人員の制約までは読み取れません。
+ロボットアームや自動化設備など、産業現場を改善する技術は数多く存在します。しかし、どの技術をどこに導入すべきかを判断するには、現場を調査し、問題を発見し、改善方法を検討する必要があります。この前段階を担う専門家の時間や人数が、改善を進められる規模を左右します。
 
-そこで、AIによる観察とヒアリングを組み合わせます。映像から気づいた点を仮説として整理し、関係者に確かめるべき事項を質問にします。その回答を踏まえ、現場の条件に合った改善策を提案することを目指しています。
+自動化技術が発展しても、その導入を判断する調査・分析・コンサルティングが人間に依存したままでは、産業全体の改善スピードには限界があります。
 
-## システムが目指す流れ
+本プロジェクトは、このプロセスをAIによって自動化・効率化し、現場改善を大規模に展開できる仕組みの構築を目指します。
 
-| 段階 | AIの役割 |
-| --- | --- |
-| **1. 観察** | 現場の記録から、作業の流れや気になる事象を捉える |
-| **2. 仮説の整理** | 観察した事実と推測を分け、改善の可能性と不足情報を整理する |
-| **3. ヒアリング** | 関係者に質問し、作業の理由、判断基準、制約を確かめる |
-| **4. 提案** | 観察とヒアリングの結果を基に、改善策とその根拠を示す |
+## 2. 解決したい課題
 
-例えば「新人に任せられる業務を増やしたい」という相談では、作業を観察したうえで、熟練者の判断が必要な場面や例外処理を確認します。その情報を基に、手順の標準化、教育、役割分担の見直しを検討します。これは想定する利用例であり、現場で効果を実証した事例ではありません。
+### ① 現場データの収集に負担がかかる
+
+作業時間、動作、工程を分析するには、十分な量の観察データが必要です。人間が長時間にわたって作業を観察・記録すると大きな負担がかかり、現場の従業員に任せても追加業務が発生します。そのため、分析に必要なデータを十分に集められない場合があります。
+
+### ② 現場分析が専門家の時間と知識に依存する
+
+収集したデータから課題を特定し、改善策を検討するには専門知識が必要です。専門家の時間や人数には限りがあり、調査できる現場の数や、改善を進めるスピードが制限されます。
+
+### ③ データの収集・分析と改善策の実行が分断されている
+
+データを収集・分析しても、実際の改善につなげるには、設備やソリューションの選定、導入に向けた具体化など、別の知識や支援が必要になります。問題の発見から改善策の選定、実行支援までを一貫して扱う仕組みが求められます。
+
+## 3. 提案するソリューション
+
+**AIによる現場観察・データ収集・分析・課題発見・ヒアリング・改善提案を統合したシステムを開発します。**
+
+### 想定する処理の流れ
+
+1. 現場にカメラ・マイク・各種センサーを設置します。
+2. 現場の作業状況を継続的に記録します。
+3. AIが映像・音声・センサーデータを分析します。
+4. 作業時間、動作、工程、設備の稼働状況などを把握します。
+5. 非効率な作業、ボトルネック、安全上のリスクなどの候補を見つけます。
+6. 観察だけでは分からない作業の理由や制約を、関係者へのヒアリングで確認します。
+7. AIが改善候補を生成し、根拠となるデータとともに提示します。
+8. 必要に応じて専門家が検証し、改善策を具体化します。
+
+これはシステム全体の構想です。現在は、記録デバイスの設計と、映像から改善候補・仮説・確認質問を生成するAI基盤を開発・検証しています。作業時間・工程・設備稼働の総合的な把握、対話によるヒアリング、改善策の実行支援は、今後取り組む範囲です。
 
 ## 2つのプロジェクトの役割
 
@@ -99,15 +122,17 @@
 
 ## English summary
 
-**Real-world Context is a system under development that aims to observe on-site activities, interview stakeholders, and propose improvements grounded in evidence and operational context.**
+**Real-world Context aims to remove the bottleneck created by human-led site investigation, analysis, and consulting in industrial improvement and automation.**
 
-Video can reveal what happens, but understanding why it happens also requires knowledge of decision criteria, exceptions, and practical constraints. The intended workflow combines observation, hypothesis formation, stakeholder interviews, and informed recommendations.
+Automation technologies can only be deployed effectively when someone understands the work, identifies the problems, and determines suitable interventions. This project aims to automate and streamline that preparatory process so that improvements can be pursued across more workplaces.
 
-The portfolio comprises two projects:
+It addresses three challenges: the burden of collecting sufficient operational data, dependence on a limited number of specialists, and the gap between data analysis and the implementation of improvements.
 
-- **Real-world-context:** A compact recording-device project covering ESP32S3-based electronics and sensors, PCB design in KiCad, and enclosure design in Autodesk Fusion. Development addresses wiring, thermal considerations, assembly, service access, and consistency between electrical and mechanical designs.
-- **Real-world-context-os:** A Python AI foundation for timestamped video analysis and the structured generation of improvement candidates, hypotheses, alternative explanations, and interview questions. It also includes evidence review interfaces, person detection and short-window association, and model/runtime/cost comparisons.
+The intended system combines continuous recording, AI observation and analysis, problem identification, stakeholder interviews, and evidence-based recommendations. Specialists can review and refine proposals where needed.
 
-Experiments using the first ten minutes of a public video have generated improvement candidates and clarification questions. Live stakeholder interviews, interview-driven proposal updates, integrated device-to-AI operation, and demonstrated operational improvements remain future validation steps.
+- **Real-world-context:** The recording-device project, covering ESP32S3-based electronics and sensors, PCB design in KiCad, and enclosure design in Autodesk Fusion.
+- **Real-world-context-os:** The AI software foundation, covering timestamped video analysis, evidence retrieval, and structured generation of improvement candidates, hypotheses, and interview questions.
+
+Current work includes device design and experiments that generated improvement candidates and clarification questions from the first ten minutes of a public video. Comprehensive operational analysis, live interviews, interview-driven proposal updates, integrated device-to-AI operation, implementation support, and demonstrated improvement outcomes remain future development and validation steps.
 
 This repository publishes project overviews only. Source code, detailed hardware designs, original development histories, recordings, and raw experimental data remain private.
